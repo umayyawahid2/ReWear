@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account — ReWear</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-rewear sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <i class="bi bi-recycle fs-3"></i> <span>ReWear</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Shop Marketplace</a></li>
+                </ul>
+                <ul class="navbar-nav align-items-center" id="navAuthContainer">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="auth-card text-center" style="max-width: 540px;">
+            <div class="fs-1 text-primary mb-2"><i class="bi bi-person-plus-fill"></i></div>
+            <h3 class="fw-bold mb-1">Create an Account</h3>
+            <p class="text-muted mb-4">Join ReWear to buy & sell pre-loved clothing</p>
+
+            <form id="registerForm" class="text-start">
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="e.g. Sarah Khan" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="sarah@example.com" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Password</label>
+                    <input type="password" id="password" class="form-control" placeholder="At least 6 characters" minlength="6" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold">Phone Number</label>
+                    <div class="input-group phone-input-group">
+                        <select id="countryCode" class="form-select" style="max-width: 140px;" required>
+                            <!-- Populated dynamically via JS -->
+                        </select>
+                        <input type="tel" id="phone" class="form-control" placeholder="300 1234567" required>
+                    </div>
+                    <small class="form-text text-muted">Select country code first, then enter mobile number.</small>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Location / City</label>
+                    <input type="text" id="location" class="form-control" placeholder="e.g. Islamabad, F-7" required>
+                </div>
+
+                <button type="submit" class="btn btn-rewear-primary w-100 py-2.5 mb-3 fs-6">Create Account</button>
+            </form>
+
+            <div class="border-top pt-3 text-muted">
+                Already have an account? <a href="login.html" class="text-primary fw-bold text-decoration-none">Login</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p class="mb-1 fw-bold">ReWear — Sustainable Fashion Marketplace</p>
+            <p class="small text-white-50">Built for 2-Day MVP Demo | Node.js + Express + MongoDB + Bootstrap</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

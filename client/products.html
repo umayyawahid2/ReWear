@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Marketplace — ReWear</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-rewear sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <i class="bi bi-recycle text-success fs-3"></i> <span>ReWear</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="products.html">Shop Marketplace</a></li>
+                </ul>
+                <ul class="navbar-nav align-items-center" id="navAuthContainer">
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-4">
+        <div class="row mb-4 align-items-center">
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-1">Shop ReWear Marketplace</h2>
+                <p class="text-muted">Browse pre-loved fashion items listed by community members</p>
+            </div>
+            <div class="col-md-6">
+                <form id="searchForm" class="d-flex gap-2">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search by title, brand, or style...">
+                        <button type="submit" class="btn btn-rewear-primary">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <div class="card border-0 shadow-sm rounded-4 p-3 bg-white">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold mb-0"><i class="bi bi-sliders text-primary"></i> Filters</h5>
+                        <button id="resetFiltersBtn" class="btn btn-sm btn-link text-decoration-none p-0">Reset All</button>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Category</label>
+                        <select id="filterCategory" class="form-select">
+                            <option value="All">All Categories</option>
+                            <option value="Dresses">Dresses</option>
+                            <option value="Shirts">Shirts & Tops</option>
+                            <option value="Pants">Pants & Jeans</option>
+                            <option value="Jackets">Jackets & Coats</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Accessories">Accessories</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Size</label>
+                        <select id="filterSize" class="form-select">
+                            <option value="All">All Sizes</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                            <option value="Free Size">Free Size</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Condition</label>
+                        <select id="filterCondition" class="form-select">
+                            <option value="All">All Conditions</option>
+                            <option value="Brand New">Brand New</option>
+                            <option value="Like New">Like New</option>
+                            <option value="Gently Used">Gently Used</option>
+                            <option value="Well Worn">Well Worn</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Location</label>
+                        <input type="text" id="filterLocation" class="form-control" placeholder="e.g. Islamabad, Lahore">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Price Range (Rs.)</label>
+                        <div class="d-flex gap-2">
+                            <input type="number" id="filterMinPrice" class="form-control" placeholder="Min">
+                            <input type="number" id="filterMaxPrice" class="form-control" placeholder="Max">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row" id="productGrid">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p class="mb-1 fw-bold">ReWear — Sustainable Fashion Marketplace</p>
+            <p class="small text-white-50">Built for 2-Day MVP Demo | Node.js + Express + MongoDB + Bootstrap</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
